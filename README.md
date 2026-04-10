@@ -1,1 +1,0 @@
-# aoiinkamiyama-coder.github.io
