@@ -1,0 +1,269 @@
+styles.css
+:root {
+  --bg-color: #f5f5f5;
+  --text-color: #111111;
+  --sub-color: #666666;
+  --line-color: #d9d9d9;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.container {
+  width: min(100% - 40px, 960px);
+  margin: 0 auto;
+  padding: 24px 0 40px;
+}
+
+.hero,
+.section,
+.footer {
+  background-color: var(--white);
+  border: 1px solid var(--line-color);
+  border-radius: 24px;
+}
+
+.hero {
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  padding: 56px 32px;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 44px;
+  width: 100%;
+}
+
+.hero-copy {
+  flex: 1;
+}
+
+.hero-photo {
+  width: min(320px, 30vw);
+  aspect-ratio: 3 / 4;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(17, 17, 17, 0.12);
+  flex-shrink: 0;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.small-title,
+.section-label {
+  margin: 0 0 16px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sub-color);
+}
+
+.hero-name {
+  margin: 0;
+  font-size: clamp(52px, 12vw, 110px);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.hero-name span {
+  display: block;
+  margin-top: 10px;
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(32px, 7vw, 56px);
+  font-weight: 500;
+}
+
+.catch-copy {
+  margin: 24px 0 0;
+  font-size: clamp(18px, 3vw, 28px);
+  color: var(--sub-color);
+}
+
+.intro-text {
+  max-width: 620px;
+  margin: 24px 0 0;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.scroll-button {
+  width: fit-content;
+  margin-top: 32px;
+  padding: 14px 24px;
+  border: 1px solid var(--text-color);
+  border-radius: 999px;
+  background-color: transparent;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.scroll-button:hover {
+  transform: translateY(3px);
+  background-color: var(--text-color);
+  color: var(--white);
+}
+
+.section {
+  margin-top: 20px;
+  padding: 40px 32px;
+}
+
+.section h2 {
+  margin: 0 0 24px;
+  font-size: clamp(32px, 6vw, 56px);
+  letter-spacing: -0.05em;
+}
+
+.about-text p {
+  margin: 0 0 18px;
+  font-size: 16px;
+  line-height: 2;
+}
+
+.links-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.links-list a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 0;
+  color:#666666;
+  border-bottom: 1px solid var(--line-color);
+  transition: transform 0.3s, padding-left 0.3s;
+}
+
+.links-list a:hover {
+  transform: translateX(8px);
+  padding-left: 8px;
+}
+
+.link-name {
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.link-url {
+  font-size: 14px;
+  color: var(--sub-color);
+}
+
+.footer {
+  margin-top: 20px;
+  padding: 24px 32px;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer-message {
+  margin-top: 8px;
+  color: var(--sub-color);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.fade-in:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.fade-in:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.fade-in:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+.fade-in:nth-child(4) {
+  animation-delay: 0.7s;
+}
+
+.fade-in:nth-child(5) {
+  animation-delay: 0.9s;
+}
+
+.scroll-show {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-show.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: min(100% - 20px, 960px);
+  }
+
+  .hero,
+  .section,
+  .footer {
+    border-radius: 18px;
+  }
+
+  .hero,
+  .section,
+  .footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-photo {
+    width: 100%;
+    max-width: 420px;
+    margin-top: 28px;
+  }
+
+  .links-list a {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
